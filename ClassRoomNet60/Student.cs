@@ -39,20 +39,28 @@ namespace ClassRoomNet60
 
         public string BirthSeason()
         {
-            if (BirthMonth == 12 || BirthMonth == 1 || BirthMonth == 2)
+            switch (BirthMonth)
             {
-                return "Winter";
-            }
-            if (BirthMonth == 3 || BirthMonth == 4 || BirthMonth == 5)
-            {
-                return "Spring";
-            }
-            if (BirthMonth == 6 || BirthMonth == 7 || BirthMonth == 8)
-            {
-                return "Summer";
-            }
+                case 12:
+                case 1:
+                case 2:
+                    return "Winter";
+                case 3:
+                case 4:
+                case 5:
+                    return "Spring";
+                case 6:
+                case 7:
+                case 8:
+                    return "Summer";
+                case 9:
+                case 10:
+                case 11:
+                    return "Autumn";
+                default:
+                    return $"This month: {BirthMonth} are not in the interval: 1-12";
 
-            return "Autumn";
+            }
 
         }
 
