@@ -20,6 +20,10 @@ namespace ClassRoomNet60
             BirthYear = birthYear;
         }
 
+        public override string ToString()
+        {
+            return "Name: " + Name.PadRight(20) + "Birth Month: " + BirthMonth + "                " + "Birth Year: " + BirthYear;
+        }
 
     }
 }
