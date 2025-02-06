@@ -22,5 +22,5 @@ foreach (Student student in DatRoskilde.Students)
     Console.WriteLine(student);
 }
 
-
+DatRoskilde.BirthCounter();
 
