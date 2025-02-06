@@ -10,7 +10,19 @@ namespace ClassRoomNet60
     public class Student
     {
         public string Name { get; private set; }
-        public int BirthMonth { get; private set; }
+        private int _birthMonth;
+
+        public int BirthMonth
+        {
+            get { return _birthMonth; }
+            set
+            {
+                if (value >= 1 && value <= 12)
+                    _birthMonth = value;
+                else
+                    throw new ArgumentException($"The value should be between 1-12, you wrote {value}");
+            }
+        }
 
         public int BirthYear { get; private set; }
 
@@ -18,10 +30,8 @@ namespace ClassRoomNet60
         {
             Name = name;
 
-            if (birthMonth > 12 || birthMonth < 1) { throw new Exception("Insert valid birth month"); }
+            _birthMonth = birthMonth;
 
-            BirthMonth = birthMonth;
-            
 
             BirthYear = birthYear;
         }
