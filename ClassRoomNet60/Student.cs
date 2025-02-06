@@ -20,9 +20,27 @@ namespace ClassRoomNet60
             BirthYear = birthYear;
         }
 
+        public string Season()
+        {
+            if (BirthMonth == 12 || BirthMonth == 1 || BirthMonth == 2)
+            {
+                return "Winter";
+            }
+            if (BirthMonth == 3 || BirthMonth == 4 || BirthMonth == 5)
+            {
+                return "Spring";
+            }
+            if (BirthMonth == 6 || BirthMonth == 7 || BirthMonth == 8)
+            {
+                return "Summer";
+            }
+
+            return "Autumn";
+
+        }
         public override string ToString()
         {
-            return "Name: " + Name.PadRight(20) + "Birth Month: " + BirthMonth + "                " + "Birth Year: " + BirthYear;
+            return "Name: " + Name.PadRight(20) + "Birth Month: " + BirthMonth + "                " + "Birth Year: " + BirthYear + "                " + "Season: " + Season();
         }
 
     }
